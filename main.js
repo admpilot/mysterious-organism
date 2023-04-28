@@ -56,7 +56,9 @@ function pAequorFactory(specimenNumber, specimenStrand)
       console.log(`Specimen #${this.specimenNumber} and Specimen #${specimenToCompare.specimenNumber} have ${Math.floor((sumBasesEqual / 15) * 100)}% bases in common`);
       return (sumBasesEqual==100 ? false : true);
     },
-    //.willLikelySurvive() returns true if the object’s .dna array contains at least 60% 'C' or 'G' bases. Otherwise, .willLikelySurvive() returns false.
+    //.willLikelySurvive() returns true if the object’s .dna array...
+    // contains at least 60% 'C' or 'G' bases. Otherwise...
+    // .willLikelySurvive() returns false.
     willLikelySurvive()
     {
       let sumFavs=0;
@@ -67,18 +69,34 @@ function pAequorFactory(specimenNumber, specimenStrand)
         }
       })
       return ((sumFavs / 15)*100) >= 60 ? true : false;
+    },
+    // .complementStrand() returns a newly generated strand off this...
+    // specimen objects DNA strand
+    complementStrand()
+    {
+      let compStrand = [];
+      this.specimenStrand.forEach((element)=>{
+        switch (element){
+          case 'A':
+            compStrand.push('T');
+            break;
+          case 'C':
+            compStrand.push('G');
+            break;
+          case 'T':
+            compStrand.push('A');
+            break;
+          case 'G':
+            compStrand.push('C');
+            break;
+        }
+        
+      });
+      return compStrand;
     }
   };
 }
-/*
-let specimen1 = pAequorFactory(1, mockUpStrand());
-console.log(specimen1);
-console.log(specimen1.willLikelySurvive());
-let specimen2 = pAequorFactory(2,mockUpStrand());
-console.log(specimen2);
-console.log(specimen2.willLikelySurvive());
-specimen1.compareDNA(specimen2);
-*/
+
 let masterSpecimenList = [];
 do
 {
