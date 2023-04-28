@@ -12,7 +12,9 @@
 ### 2. The functions returnRandBase and mockUpStrand are provided by codecademy along with some context about the 4 types of bases that comprise DNA (Adenine, Thymine, Cytosine, and Guanine). returnRandBase generates 1 of the 4 bases, while mockUpStrand generates an array representing a DNA strand containing 15 bases to simulate a mysterious organism. 
 ### 3. Create a factory function pAequorFactory() that has two parameters:
 
-### The first parameter is a number (no two organisms should have the same number). ###The second parameter is an array of 15 DNA bases. pAequorFactory() should return an object that contains the properties specimenNum and dna that correspond to the parameters provided. ###4.To simulate a mutation, in pAequorFactory()‘s returned object, add the method .mutate().
+### The first parameter is a number (no two organisms should have the same number). 
+### The second parameter is an array of 15 DNA bases. pAequorFactory() should return an object that contains the properties specimenNum and dna that correspond to the parameters provided. 
+### 4.To simulate a mutation, in pAequorFactory()‘s returned object, add the method .mutate().
 
 ### .mutate() is responsible for randomly selecting a base in the object’s dna property and changing the current base to a different base. Then .mutate() will return the object’s dna.
 
